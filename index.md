@@ -1,5 +1,5 @@
-Hello! My name is Tzu-Yun. This site showcases all my fast robot work :-D
-![This is me](/assets/images/IMG_2983.png)
+Hello! My name is Tzu-Yun. This site showcases all my work for ECE 5960 :-D
+!(/assets/images/IMG_2983.png)
 
 
 ## Welcome to GitHub Pages
