@@ -2,7 +2,8 @@
 
 You can use the [editor on GitHub](https://github.com/tzuyunhsu/ECE5960/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Find my projects for fast robot 2022!
+Hello! My name is Tzu-Yun. This site showcases all my fast robot work :-D
+![This is me]()
 
 ### Markdown
 
