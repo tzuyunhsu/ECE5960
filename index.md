@@ -1,10 +1,10 @@
+Hello! My name is Tzu-Yun. This site showcases all my fast robot work :-D
+![This is me](/assets/images/IMG_2983.png)
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/tzuyunhsu/ECE5960/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Hello! My name is Tzu-Yun. This site showcases all my fast robot work :-D
-![This is me]()
-
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
