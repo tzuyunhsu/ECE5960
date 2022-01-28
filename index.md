@@ -1,6 +1,6 @@
 Hello! My name is Tzu-Yun. This site showcases all my work for ECE 5960 :-D
 
-<img src="/assets/IMG_2984.jpg" width="200">
+<img src="/assets/me.jpg" width="200">
 
 - Lab1
 - Lab2
