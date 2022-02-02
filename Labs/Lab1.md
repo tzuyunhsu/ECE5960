@@ -36,5 +36,5 @@ In this lab, we are required to get familiar with Arduino IDE and the Artemis bo
 Additional task:
 1. Program the board to turn on the LED when you whistle, and off otherwise. I added an variable ledSwitch to record the return value of the loudest frequency. If the loudest frequency is higher than 200, the LED is set to HIGH. If not, it is set to LOW. 200 is a rough measurement cap of frequency with no specific sound appeared while measuring. 
 
-
+<img src="/ECE5960/assets/ledSwitch.png" width="400">
 
