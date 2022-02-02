@@ -13,6 +13,7 @@ In this lab, we are required to get familiar with Arduino IDE and the Artemis bo
 2. Install the Arduino core for Apollo 3. I followed the instructions shown on the "Artemis Development with Arduino" to first adjust the Additional Board Manager URL in Preferences, and install the SparkFun Apollo 3 board package. It took a few minutes to finish the installing process.
 
 3. Implement "Example: Blink It Up!" shown in the introduction page. In this step, we need to blink the LED on the Artemis board by running the example file 'Blink'. I compiled the file and uploaded it to the board, and the blue LED starts blinking as shown in the following video.
+    <iframe width="560" height="315" src="https://youtu.be/XM9cvpO2SmM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
     [![Blink](/ECE5960/assets/blink.png)](https://youtu.be/XM9cvpO2SmM)
 
