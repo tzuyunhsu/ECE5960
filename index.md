@@ -5,7 +5,7 @@ Hello! My name is Tzu-Yun. This site showcases my work for ECE 5960 Fast Robot :
 
 ## Labs
 
-- Lab 1
+- <a href="/Labs/Lab1">Lab 1</a>
 - Lab 2
 - Lab 3
 - Lab 4
