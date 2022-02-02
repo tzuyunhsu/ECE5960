@@ -16,30 +16,28 @@ In this lab, we are required to get familiar with Arduino IDE and the Artemis bo
     
     <iframe width="560" height="315" src="https://www.youtube.com/embed/XM9cvpO2SmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    [![Blink](/ECE5960/assets/blink.png)](https://youtu.be/XM9cvpO2SmM)
-
 4. Run Example2_Serial in File-> Examples-> Artemis Examples. The path is slightly different from the instruction, but I was able to find the serial example in File-> Examples-> Apollo 3-> Example04_Serial. In this example, the baud rate is set to 115200, and it echoes the serial data that user writes on the serial monitor. I also make sure that the serial monitor is set to the same baud rate as listed to display the message correctly. As shown in the video below, it is able to display what I just entered on the serial monitor, which means the message is read and write as expected through the USB port.
     
-    [![Serial](/ECE5960/assets/serial.png)](https://youtu.be/Sm3dK7V2JJA)
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sm3dK7V2JJA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 5. Run the AnalogRead example. The example is able to read the temperature captured by ADC channels. On the serial monitor, we can see the raw ADC counts from the die temperature sensor from the board. The change of the temperature takes some time to reflect on the numbers. The first video shows the temperature before warming up the chip. After I hold and blow the chip for a while, the temperature increases.
 
     Here is the demo before warming up the board:
     
-    [![analogR1](/ECE5960/assets/analogR 1.png)](https://youtu.be/-yx9y1qBAr0)
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-yx9y1qBAr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
     Here is the outcome after warming up the board:
     
-    [![analogR2](/ECE5960/assets/analogR 2.png)](https://youtu.be/Wm96Pu9kFZA)
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Wm96Pu9kFZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
 6. Run the MicrophoneOutput example. The example can capture the loudest frequecy from the embedded microphone. As the music starts playing, the loudet frequency changes based on the sound received.
     
-    [![freq](/ECE5960/assets/mic.png)](https://youtu.be/TVpvZs10Qlo)
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TVpvZs10Qlo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
 Additional task:
 1. Program the board to turn on the LED when you whistle, and off otherwise. I added an variable ledSwitch to record the return value of the loudest frequency. If the loudest frequency is higher than 200, the LED is set to HIGH. If not, it is set to LOW. 200 is a rough measurement cap of frequency with no specific sound appeared while measuring. 
 
-<img src="/ECE5960/assets/ledSwitch.png" width="400">
+    <img src="/ECE5960/assets/ledSwitch.png" width="400">
 
-[![additional](/ECE5960/assets/mic2.png)](https://youtu.be/6Jqbclp8EBI)
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6Jqbclp8EBI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
