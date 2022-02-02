@@ -22,11 +22,11 @@ In this lab, we are required to get familiar with Arduino IDE and the Artemis bo
 
 5. Run the AnalogRead example. The example is able to read the temperature captured by ADC channels. On the serial monitor, we can see the raw ADC counts from the die temperature sensor from the board. The change of the temperature takes some time to reflect on the numbers. The first video shows the temperature before warming up the chip. After I hold and blow the chip for a while, the temperature increases.
 
-Here is the demo before warming up the board:
+    Here is the demo before warming up the board:
     
     [![analogR1](/ECE5960/assets/analogR 1.png)](https://youtu.be/-yx9y1qBAr0)
-
-Here is the outcome after warming up the board:
+    
+    Here is the outcome after warming up the board:
     
     [![analogR2](/ECE5960/assets/analogR 2.png)](https://youtu.be/Wm96Pu9kFZA)
 
@@ -39,5 +39,5 @@ Additional task:
 
 <img src="/ECE5960/assets/ledSwitch.png" width="400">
 
-    [![additional](/ECE5960/assets/mic2.png)](https://youtu.be/6Jqbclp8EBI)
+[![additional](/ECE5960/assets/mic2.png)](https://youtu.be/6Jqbclp8EBI)
 
