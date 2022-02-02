@@ -23,8 +23,11 @@ In this lab, we are required to get familiar with Arduino IDE and the Artemis bo
 5. Run the AnalogRead example. The example is able to read the temperature captured by ADC channels. On the serial monitor, we can see the raw ADC counts from the die temperature sensor from the board. The change of the temperature takes some time to reflect on the numbers. The first video shows the temperature before warming up the chip. After I hold and blow the chip for a while, the temperature increases.
 
 Here is the demo before warming up the board:
+
 [![analogR1](/ECE5960/assets/analogR 1.png)](https://youtu.be/-yx9y1qBAr0)
+
 Here is the outcome after warming up the board:
+
 [![analogR2](/ECE5960/assets/analogR 2.png)](https://youtu.be/Wm96Pu9kFZA)
 
 6. Run the MicrophoneOutput example. The example can capture the loudest frequecy from the embedded microphone. As the music starts playing, the loudet frequency changes based on the sound received.
@@ -35,6 +38,7 @@ Additional task:
 1. Program the board to turn on the LED when you whistle, and off otherwise. I added an variable ledSwitch to record the return value of the loudest frequency. If the loudest frequency is higher than 200, the LED is set to HIGH. If not, it is set to LOW. 200 is a rough measurement cap of frequency with no specific sound appeared while measuring. 
 
 <img src="/ECE5960/assets/ledSwitch.png" width="400">
+
 [![additional](/ECE5960/assets/mic2.png)](https://youtu.be/6Jqbclp8EBI)
 
 
