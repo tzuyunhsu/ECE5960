@@ -14,8 +14,7 @@ In this lab, we are required to get familiar with Arduino IDE and the Artemis bo
 
 3. Implement "Example: Blink It Up!" shown in the introduction page. In this step, we need to blink the LED on the Artemis board by running the example file 'Blink'. I compiled the file and uploaded it to the board, and the blue LED starts blinking as shown in the following video.
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
-
+[![Blink](/assets/blink.png)](https://youtu.be/XM9cvpO2SmM)
 
 4. Run Example2_Serial in File-> Examples-> Artemis Examples. The path is slightly different from the instruction, but I was able to find the serial example in File-> Examples-> Apollo 3-> Example04_Serial. In this example, the baud rate is set to 115200, and it echoes the serial data that user writes on the serial monitor. I also make sure that the serial monitor is set to the same baud rate as listed to display the message correctly. As shown in the video below, it is able to display what I just entered on the serial monitor, which means the message is read and write as expected through the USB port.
 
