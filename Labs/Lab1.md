@@ -20,11 +20,11 @@ In this lab, we are required to get familiar with Arduino IDE and the Artemis bo
     
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Sm3dK7V2JJA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-5. Run the AnalogRead example. The example is able to read the temperature captured by ADC channels. On the serial monitor, we can see the raw ADC counts from the die temperature sensor from the board. The change of the temperature takes some time to reflect on the numbers. The first video shows the temperature before warming up the chip. After I hold and blow the chip for a while, the temperature increases.
+5. Run the AnalogRead example. The example is able to read the temperature captured by ADC channels. On the serial monitor, we can see the raw ADC counts from the die temperature sensor from the board. The change of the temperature takes some time to reflect on the numbers. The first video shows the temperature before warming up the chip. The temperature data collected is in the range of 32200-32300. After I hold on the chip for a while, the temperature increases to around 33000.
 
     Here is the demo before warming up the board:
     
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/-yx9y1qBAr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/5-OssVm3ug4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
     Here is the outcome after warming up the board:
     
