@@ -26,19 +26,18 @@ In the last lab, we learned to communicate with the Artemis board via the serial
 After all the setup, we perform some tasks to show the functionality of the bluetooth communication. The following video showcases all the tasks required in this lab:
 
   <iframe width="560" height="315" src="https://www.youtube.com/embed/ci3kjhJeB64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br/><br/>
 
 1. Send an ECHO command with a string value from the computer to the Artemis board, and receive an augmented string on the computer.
 <br/><br/>
 On the computer side, I use 'send_command' function and specify the command as 'ECHO' to send a string "HiHello" to the Artemis board. To receive the string back, I created a variable 'str' to store the data returned the function 'receive_string'. I print the outcome on Jupyter notebook, and it showed exactly 'HiHello' as the output of the string, which means the string did get sent back and forth between the computer and the Artemis board. On the Artemis end, I updated the 'ECHO' command case in 'handle_command()' function in Arduino IDE, and the code snippet is shown as below. The string received from the connection would also be printed on the serial window.
 
-  <img src="/ECE5960/assets/echo.png" width="600">
+    <img src="/ECE5960/assets/echo.png" width="600">
 
 2. Send three floats to the Artemis board using the SEND_THREE_FLOATS command and extract the three float values in the Arduino sketch.
 <br/><br/>
 This task is similar as the first one, but instead of printing the data received directly, the data needs to be printed separately. I modified the command sent to Artemis as 'SEND_THREE_FLOATS', and the each float sent is separated by a '|' symbol, defined as the end of a value substring in an Artemis header file. On the Artemi side, I updated the details in case SEND_THREE_FLOATS in handle_command() to perform the task.
 
-  <img src="/ECE5960/assets/floats.png" width="600">
+    <img src="/ECE5960/assets/floats.png" width="600">
 
 3. Setup a notification handler in Python to receive the float value (the BLEFloatCharactersitic in Arduino) from the Artemis board. In the callback function, store the float value into a (global) variable such that it is updated every time the characteristic value changes.
 <br/><br/>
@@ -56,7 +55,7 @@ As described in ArtemisBLEController section in the lab document, notification h
     Since the write_data() defined in the code on the Artemis board updates the data every 500 ms, the floats we seen always updated the seconds from the time since the Arduino starts by an interval of 0.5 s.
 
 4. In your report, briefly explain the difference between the two approaches:  
-  (1) Receive a float value in Python using receive_float() on a characteristic that is defined as BLEFloatCharactersitic in the Arduino side. 
+  (1) Receive a float value in Python using receive_float() on a characteristic that is defined as BLEFloatCharactersitic in the Arduino side.  
   (2) Receive a float value in Python using receive_string() (and subsequently converting it to a float type in Python) on a characteristic that is defined as a BLECStringCharactersitic in the Arduino side.
 <br/><br/>
 The receive_float() is more intuitive to implement since the value is already in float type and the receive_float() has already implemented the bytearray to float function to capture the data. If we use receive_string() instead, we need to modify the bytearray_to_string to decode strings and convert the decoded string into floats, which is hard to implement. The characters in bytearrays can be differnent, so it's hard to define when to stop reading and converting it into a number. 
@@ -68,7 +67,7 @@ Perform an analysis on the communication performance.
 <br/><br/>
 Effective data rate refers to the average number of units of data is transferred per unit time between the sender and the receiver. I wrote a 'performance' function to doceument the average time required to complete data transmission by sending a message. The message contains different numbers of 'a's and this represents the performance for message with distinct bytes. As shown in the picture, the effective data rate ranges from around 30 to 34 bytes per second when transmitting 1 to 10 bytes of data.
 
-  <img src="/ECE5960/assets/EDR.png" width="600">
+    <img src="/ECE5960/assets/EDR.png" width="600">
 
 2. Reliability: What happens when you send data at a higher rate from the robot to the computer? Does the computer read all the data published (without missing anything) from the Artemis board? Include your answer in the write-up.
 <br/><br/>
