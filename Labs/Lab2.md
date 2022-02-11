@@ -19,6 +19,7 @@ In the last lab, we learned to communicate with the Artemis board via the serial
   
 ## Tasks
 After all the setup, we perform some tasks to show the functionality of the bluetooth communication. The following video showcases all the tasks required in this lab:
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ci3kjhJeB64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ///put video here
 
