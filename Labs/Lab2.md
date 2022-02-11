@@ -66,9 +66,28 @@ Perform an analysis on the communication performance.
 1. Effective Data Rate: Send a message from the computer and receive a reply from the Artemis board. Note the respective times for each event, calculate the data rate and include at least one plot to support your write-up.
 <br/><br/>
 Effective data rate refers to the average number of units of data is transferred per unit time between the sender and the receiver. I wrote a 'performance' function to doceument the average time required to complete data transmission by sending a message. The message contains different numbers of 'a's and this represents the performance for message with distinct bytes. As shown in the picture, the effective data rate ranges from around 30 to 34 bytes per second when transmitting 1 to 10 bytes of data.
+    ```python
+    totalTime = 0
+    message = ""
+
+    def performance():
+        ble.send_command(CMD.ECHO, message)
+        start = time.time()
+        str = ble.receive_string(ble.uuid['RX_STRING'])
+        end = time.time()
+        print(str)
+        timePeriod = end - start
+        return timePeriod
+     ```
+     ```python
+     for i in range (10):
+      message = message + 'a'
+      totalTime = performance()
+      print(totalTime)
+     ```
 
     <img src="/ECE5960/assets/EDR.png" width="600">
 
-2. Reliability: What happens when you send data at a higher rate from the robot to the computer? Does the computer read all the data published (without missing anything) from the Artemis board? Include your answer in the write-up.
+2. Reliability: What happens when you send data at a higher rate from the robot to the computer?
 <br/><br/>
 I switched the baud rate to 460800 for this task, and the data is still processed perfectly as the original 115200 baud rate. That means the computer can still read all data even at a higher rate.
