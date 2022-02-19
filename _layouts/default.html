@@ -19,6 +19,33 @@
           
           <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
           <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+          
+          <!-- nav bar-->
+          <nav id="nav" style="top: 25px;">
+								<ul>
+									<li><a href="index.html"><span>Home</span></a></li>
+									<li>
+										<a href="#features"><span>About</span></a>
+										<!--ul>
+											<li><a href="#">Lorem ipsum dolor</a></li>
+											<li><a href="#">Magna phasellus</a></li>
+											<li><a href="#">Etiam dolore nisl</a></li>
+											<li>
+												<a href="#">Phasellus consequat</a>
+												<ul>
+													<li><a href="#">Magna phasellus</a></li>
+													<li><a href="#">Etiam dolore nisl</a></li>
+													<li><a href="#">Phasellus consequat</a></li>
+												</ul>
+											</li>
+											<li><a href="#">Veroeros feugiat</a></li>
+										</ul-->
+									</li>
+									<li><a href="#banner"><span>Projects</span></a></li>
+									<li><a href="#main"><span>Resume</span></a></li>
+									<!--li><a href="no-sidebar.html"><span>No Sidebar</span></a></li-->
+								</ul>
+						</nav>
 
           {% if site.show_downloads %}
             <section id="downloads">
