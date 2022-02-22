@@ -1,7 +1,7 @@
 ---
 ---
-
-@import "{{ site.theme }}";
 #header_wrap .inner {
     padding: 50px 0px 30px 0px;
 }
+
+@import "{{ site.theme }}";
