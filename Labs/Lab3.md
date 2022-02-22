@@ -37,7 +37,10 @@ For the prelab, I planned out the connections between two time-of-flight sensors
   /// acc, gyro video
 
 ### (a) Accelerometer
-1. Refering to the material from the previous lecture, I found pitch by taking atan2 of the accX() and accZ() data and roll by taking atan2 of the accY() and accZ() data. As I changed the angle of the board, the changes in pitch and roll changed as accordingly to my movement.  
-/// pitch and roll pic
-//What I got on arduino serial is pitch: 1.4, roll: 0; by calculation pitch: -0.7854, roll: 0, refer to the pic, accuracy: do standard deviation when the sensor is stable
-2. 
+1. Refering to the material from the previous lecture, I found pitch by taking atan2 of the accX() and accZ() data and roll by taking atan2 of the accY() and accZ() data. As I changed the angle of the board, the changes in pitch and roll changed as accordingly to my movement. Pitch data goes from -90 degrees to 90 degrees. The step in the middle is supposed to be 0 degree. However, the board seemed to be held slightly tilted against the table when I measured the data, so the outcome showed -10 degrees instaed as shown in the figure.  
+/// pitch and roll pic. 
+//accuracy: do standard deviation when the sensor is stable!!!!  
+2. /// increase the measuring freq. 
+
+### (b) Gyroscope
+1. 
