@@ -38,7 +38,8 @@ For the prelab, I planned out the connections between two time-of-flight sensors
 
 ### (a) Accelerometer
 1. Refering to the material from the previous lecture, I found pitch by taking atan2 of the accX() and accZ() data and roll by taking atan2 of the accY() and accZ() data. As I changed the angle of the board, the changes in pitch and roll changed as accordingly to my movement. Pitch data goes from -90 degrees to 90 degrees. The step in the middle is supposed to be 0 degree. However, the board seemed to be held slightly tilted against the table when I measured the data, so the outcome showed -10 degrees instaed as shown in the figure.  
-/// pitch and roll pic. 
+/// pitch and roll pic.  
+As for the accuracy, I captured the pitch data at -90 degrees and compared the difference betweem the measured data and the expected data. The accuracy is not stable in the beginning of the measurement, but it gets stable and accurate after 500 ms.
 //accuracy: do standard deviation when the sensor is stable!!!!  
 2. /// increase the measuring freq. 
 
