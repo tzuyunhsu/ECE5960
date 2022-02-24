@@ -76,4 +76,9 @@ After choosing the cut off frequency, I got the RC constant as `1/(2*M_PI*10)`, 
 /// gyro_alpha
 ### Additional Tasks
 I used the provided equations to convert the magnetometer data into a yaw angle, and tried to find the magnetic north based on the outcome data. If I keep the IMU board horizontal and rotate it according to the z-axis, the magnetic north will be the direction with the highest data shown on the graph. I compared the yaw value from magnetometer with that from gyroscope as reference to define the direction. However, i didn't see significant changes from magnetometer as I rotated the board. This may be due to the low reliability of magnetometer or the interference of other electronics in the room.
+  ```
+  xm = myICM.magX()*cos(pitch) - myICM.magY()*sin(roll)*sin(pitch) + myICM.magZ()*cos(roll)*sin(pitch); //these were saying theta=pitch and roll=phi
+  ym = myICM.magY()*cos(roll) + myICM.magZ()*sin(roll*M_PI/180); 
+  yaw = atan2(ym, xm);
+  ```
 /// magne video 
