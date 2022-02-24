@@ -37,13 +37,43 @@ For the prelab, I planned out the connections between two time-of-flight sensors
   /// acc, gyro video
 
 ### (a) Accelerometer
-1. Refering to the material from the previous lecture, I found pitch by taking atan2 of the accX() and accZ() data and roll by taking atan2 of the accY() and accZ() data. As I changed the angle of the board, the changes in pitch and roll changed as accordingly to my movement. Pitch data goes from -90 degrees to 90 degrees. The step in the middle is supposed to be 0 degree. However, the board seemed to be held slightly tilted against the table when I measured the data, so the outcome showed -10 degrees instaed as shown in the figure.  
+1. Refering to the material from the previous lecture, I found pitch by
+  ```
+  pitch = atan2(sensor->accX(),sensor->accZ())*180/M_PI;
+  roll = atan2(sensor->accY(),sensor->accZ())*180/M_PI;
+  ```
+  As I changed the angle of the board, the changes in pitch and roll changed as accordingly to my movement. Pitch data goes from -90 degrees to 90 degrees. The step in the middle is supposed to be 0 degree. However, the board seemed to be held slightly tilted against the table when I measured the data, so the outcome showed -10 degrees instaed as shown in the figure.  
 /// pitch and roll pic.  
-As for the accuracy, I captured the pitch data at -90 degrees and compared the difference betweem the measured data and the expected data. The accuracy is not stable in the beginning of the measurement, but it gets stable and accurate after 500 ms.
+  As for the accuracy, I captured the pitch data at -90 degrees and compared the difference betweem the measured data and the expected data. The accuracy is not stable in the beginning of the measurement, but it gets stable and accurate after 500 ms.
 //accuracy: do standard deviation when the sensor is stable!!!!  
-2. /// increase the measuring freq. 
-
+2. For the frequency response to tapping, I set the time delay to 10 ms to increase the sampling frequency before the test. Then, I saved the pitch and roll data from serial monitor to txt files, and used MATLAB to plot the signal over time and the FFT response. Pitch and roll over time figures specify the limited noise region, which are the taps, in the overall data. For the pitch FFT figure in a noisy environment, it seems to show a couple spikes starting at 10 Hz. While the data before 10 Hz tends to have small spikes as well, thety are relatively small compared with the major spikes between 10 - 30 Hz. For the roll FFT figures, it's more clear to see the noise starting from 3 Hz, and the following curves with similar trends might be the resonant noises from tapping. I also did the pitch frequency FFT without tapping to compare the result of the data, and it only shows a spike within the 3 Hz region. However, I chose the cut off frequency to be 10 Hz since it's reasonable to have a decreasing amplitude trend in different frequencies until 10 Hz. The amplitude also hits minimum at 10 Hz.  
+After choosing the cut off frequency, I got the RC constant as `1/(2*M_PI*10)`, which can be further applied to the equation that calculates alpha for a complimentary low pass filter.  
+  ```
+  alpha (a) = 0.018/(0.018+(1/(2*M_PI*25)));  // 0.018 is the time period calculated by millis()
+  
+  pitch = (1-a) * pitch + a * (atan2(sensor->accX(),sensor->accZ())*180/M_PI);
+  roll = (1-a) * roll + a * (atan2(sensor->accY(),sensor->accZ())*180/M_PI);
+  ```
+  Different cut off frequencies affect the frequency that's been taken into consideration, and it's nice to find the frequency with noises and filter them out to get a more stable signal output. 
+/// pitchTime, pitchFFT, rollTime, rollFFT, pitch no tap
 ### (b) Gyroscope
-1. 
+1. Gyroscope measures the angular velocities along the three axes. I captured the actual time period by calculating the start and end time of each loop, and it turns out to be 18 ms. From the video, the data from the gyroscope seems less noisy but it tends to drift. Although the data from accelerometer is more noisy, the data remains relatively accurate since it still goes back to 0 degree when I turn the sensor back to flat.  
+  ```
+  GRoll = GRoll + (sensor->gyrX())*((t-lastTime)/1000);
+  GPitch = GPitch + (sensor->gyrY())*((t-lastTime)/1000);
+  GYaw = GYaw + (sensor->gyrZ())*((t-lastTime)/1000);
+  ```
+/// gyro video. 
+  After decreasing the sampling frequency from 100 to 10 Hz, the signal seems more noisy in both accelerometer and gyroscope as I flip or rotate the board.
+/// gyro+pitch 10/100 pic. 
 
+2. I used the same alpha constant from the previous section to define a complimentary filter for pitch and roll in gyroscope, which is implemented by. 
+  ```
+  GPitch = a * (GPitch + sensor->gyrY()*((t-lastTime)/1000)) + (1-a) * pitch;
+  GRoll = a * (GRoll + sensor->gyrX()*((t-lastTime)/1000)) + (1-a) * roll;
+  ```
+  From the figure, it doesn't show that much difference between the data with or without the filter. This makes sense since the outcome without filter from the previous testings is already quite stable. 
+/// gyro_alpha
 ### Additional Tasks
+I used the provided equations to convert the magnetometer data into a yaw angle, and tried to find the magnetic north based on the outcome data. If I keep the IMU board horizontal and rotate it according to the z-axis, the magnetic north will be the direction with the highest data shown on the graph. I compared the yaw value from magnetometer with that from gyroscope as reference to define the direction. However, i didn't see significant changes from magnetometer as I rotated the board. This may be due to the low reliability of magnetometer or the interference of other electronics in the room.
+/// magne video 
