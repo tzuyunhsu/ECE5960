@@ -18,7 +18,7 @@ The measured distance demonstrated a linear relationship within the distance ran
   <img src="/ECE5960/assets/deviation.png" width="600">
 5. By using the wire schematics described in the prelab section, I hooked up two ToF sensors and ran the ReadDistance example to prove they work as expected. Since two ToF sensors would share the same address, the shutdown pins of the ToF sensors are connected to GPIO pin 6 and 8 respectively to control the access to data at a time. In the video, I taped both sensors at the cover of my computer, and I set GPIO 6 to HIGH, GPIO 8 to LOW. GPIO 6 controls the shutdown pin of the sensor in the left when viewing from the side facing the sensors. As I blocked the left sensor with a black object, the distance detected decreased. On the other hand, nothing happened to the distance reading when I blocked the right sensor. I tested and got the same outcome from testing the right sensor.  
   <img src="/ECE5960/assets/shutdown.png" width="600">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/VQusWDWUmow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VQusWDWUmow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Additional Tasks
 1. Infrared-based distance sensors comparison.  
@@ -29,14 +29,14 @@ The measured distance demonstrated a linear relationship within the distance ran
  2. Timing budget is the time required to perform one range measurement, and the intermeasurement period is the time delay between two ranging measurements. If the intermeasurement period is shorter than the timing budget, the next ranging operation runs immediately after the current ranging measurement completes. I tried the SetIntermesaurementPeriod example from the VL53L1X library to adjust different values for both timing budget and intermeasurement period. I first set both the timing budget and the intermeasurement period to 1 ms, which means the next measurment would start ranging right after current operation, and the ranging time period is 1 ms. The serial monitor failed to print out the outcome because the intermeasurement period is shorter than the minimum timing budget. Then, I set it to 20 ms, the minimum of the timing budget, and the measurement ran smoothly. The ranging is at 50 Hz under this setting, which is reasonable for the anticipated robot speed.  
   <img src="/ECE5960/assets/timing.png" width="600">
  3.  In this section, I explored the limit checking settings from signal and sigma. The signal rate measurement represents the amplitude of the signal reflected from the target and detected by the device. As for the sigma, it represents the estimation of the standard deviation of the measurement. By running the StatusAndRate example, I checked the signal rate and range status while changing the distance in front of the sensor. Mostly, the sensor is in good status when I tried to decrease the sensing distance by covering it by my finger. However, the status failed frequently if I tried to rotate the sensor. This might affect the sensing when the robot is doing stunt in the future, and the need to secure the wiring and sensor in place is definitely necessary.  
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/2Iwdqh7c9uM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/2Iwdqh7c9uM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Part B: IMU
 1. I soldered the IMU (ICM20948) to the wires that are already connected with the ToF sensors in part a. Below shows the complete wiring between the Artemis board, two ToF sensors, and one IMU unit.  
   <img src="/ECE5960/assets/full_wire.jpg" width="600">
 2. I ran the Example1_Basics to test the functionality of the IMU. AD0_VAL represents the LSB of the 7-bit address of ICM-20948. By changing it from 1 (default) to 0, the address of the IMU unit switches from 0x69 to 0x68. I set this value to 0 since the IMU is hooked up with other sensor units. It needs the updated address to function with other sensors for communication. 
   From the serial plotter in arduino, the sensor data from accelerometer changed drastically as I rotated or flipped the sensor. The sign of the output changed from positive to negative as I rotated it 180 degrees. As I accelerated the board, the accelerometer data showed a couple spikes in the output. However, the data from gyroscope didn't change much during the whole testing. It only showed some huge change in the output right at the time I rotated or flipped the board.  
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/o-7YC5rDTfE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/o-7YC5rDTfE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### (a) Accelerometer
 1. Refering to the material from the previous lecture, I found pitch by
@@ -71,7 +71,7 @@ After choosing the cut off frequency, I got the RC constant as `1/(2*M_PI*10)`, 
   GYaw = GYaw + (sensor->gyrZ())*((t-lastTime)/1000);
   ```
   <img src="/ECE5960/assets/gyro_pitch.png" width="600">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/e9IElaAFc54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/e9IElaAFc54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   After decreasing the sampling frequency from 100 to 10 Hz, the signal seems more noisy in both accelerometer and gyroscope as I flip or rotate the board.
   <img src="/ECE5960/assets/gyro_pitch_100.png" width="600">
 
@@ -89,4 +89,4 @@ I used the provided equations to convert the magnetometer data into a yaw angle,
   ym = myICM.magY()*cos(roll) + myICM.magZ()*sin(roll*M_PI/180); 
   yaw = atan2(ym, xm);
   ```
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/2FXvtwKF-r8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/2FXvtwKF-r8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
