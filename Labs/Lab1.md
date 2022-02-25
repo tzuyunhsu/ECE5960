@@ -1,13 +1,13 @@
-## Lab1: Artemis
+# Lab1: Artemis
 
-### Objective
+## Objective
 In this lab, we are required to get familiar with Arduino IDE and the Artemis board. We learn the basic schematics of the Artemis board and set up its function background on Arduino IDE. Then, we are able to complete tasks like blinking an LED, reading/writing serial messages over USB, displaying the outcome of the onboard temperature sensor, and documenting the loudest frequency captured by the Pulse Density Microphone.
 
-### Parts
+## Parts
 - 1 x SparkFun RedBoard Artemis Nano
 - 1 x USB C-to-C cable
 
-### Steps
+## Steps
 1. Download and install the latest version of Arduino IDE. Since I have already installed Arduino IDE, 1.8.17 version, on my computer, I proceeded to the next step to start the setup process.
 
 2. Install the Arduino core for Apollo 3. I followed the instructions shown on the "Artemis Development with Arduino" to first adjust the Additional Board Manager URL in Preferences, and install the SparkFun Apollo 3 board package. It took a few minutes to finish the installing process.
