@@ -28,7 +28,7 @@ Battery life provides an important message that how long can each test cylce las
   <img src="/ECE5960/assets/float.png" width="600">
   From the graph, it showed that the speed can go from 0 to 2386 mm/s. However, if the accleration distance is longer, I think it can go to a higher speed than this. I approximated the braking distance from the graph by extending the braking region til zero speed. In this way, the outcome won't be affected by the crash in the end. The braking distance is around 3.58 m by calculating the area under the extended slope line. As for the acceleration, I took two neighboring data points with the sharpest slope to represent the maximum acceleration that it can achieve, and the number for it is 6018.3 mm/s^2.  
   <img src="/ECE5960/assets/speed.png" width="600">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/y26DDX0T6qI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/y26DDX0T6qI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   
 2. What surfaces can it handle?  
 The car runs smoothly on the rubber tile flooring. I also tried it on a doorway rug, and it runs through it easily. One difference is that running on a rug reduces the drift for the car during the motion, so it's actually easier to control it on a rough surface.
