@@ -28,7 +28,8 @@ I used the 850 mAh battery to power the car and applied the ToF sensor setup in 
   <img src="/ECE5960/assets/code.png" width="600">
   <img src="/ECE5960/assets/float.png" width="600">
   <img src="/ECE5960/assets/speed.png" width="600">
-/// car video
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/y26DDX0T6qI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
 2. What surfaces can it handle?  
 The car runs smoothly on the rubber tile flooring. I also tried it on a doorway rug, and it runs through it easily. One difference is that running on a rug reduces the drift for the car during the motion, so it's actually easier to control it on a rough surface.
 3. What stunts can it do?  
@@ -36,7 +37,7 @@ Its best trick is to brake immeditately, flip itself to the other side, and keep
 
 4. How reliably does the robot turn around its own axis?  
 The reliability depends on the surface that it is running on. I tested on the rubber tile floor, and the deviation from the starting point is small. Also, the deviation mostly shows up at the end of the motion when I tried to stop. The deviation distance I measured is around 4.5 cm. The clockwise and counterclockwise spin tend to have the same behavior.
-/// turning video
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/lFuOY-TrFqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 5. How well is the car operation with manual control?
 In this part, I set up an area containing 5x5 pieces of tiles, and mark each corner with a bottle of glue (just something I happened to find!). I started the car at the right bottom corner, and hope to touch each corner without knocking out any bottles of glue and going outside of the tile area. However, the manual control is not great at braking and turning. Since it doesn't have a brake, I have to estimate the distance and release the forward button as accordingly to perform a 'brake' before going outside the field or hitting the marks. As for turning, it can't go to really small angle precision to adjust the direction. I have to adjust the right/left button back and forth to set a relatively good direction to go on each corner. Finally, I'm still a new driver so I might get used to the operation more after multiple testings!
-/// corner video
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/qVObzcB5DYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
