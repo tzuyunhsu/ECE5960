@@ -28,22 +28,11 @@
 		  color: black;
 		}
 
-		.topnav >.active>a {
+		.topnav .active {
 		  background-color: #9a966b;
 		  color: white;
 		}
 	  </style>
-	<script>
-        $(document).ready(function () {
-  
-            $('div.topnav > a')
-                    .click(function (e) {
-                $('div.topnav > a')
-                    .removeClass('active');
-                $(this).addClass('active');
-            });
-        });
-    	</script>
 {% seo %}
     {% include head-custom.html %}
   </head>
@@ -73,6 +62,17 @@
 			<a href="/ECE5960/Labs/Lab12">Lab 12</a>
 			<a href="/ECE5960/Labs/Lab13">Lab 13</a>
 		</div>
+	    	<script>
+		// Add active class to the current item (highlight it)
+		var items = document.getElementById("topnav");
+		for (var i = 0; i < items.length; i++) {
+		  items[i].addEventListener("click", function() {
+		  var current = document.getElementsByClassName("active");
+		  current[0].className = current[0].className.replace(" active", "");
+		  this.className += " active";
+		  });
+		}
+		</script>
     </div>
 
     <!-- MAIN CONTENT -->
