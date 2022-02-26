@@ -64,7 +64,8 @@
 		</div>
 	    	<script>
 		// Add active class to the current item (highlight it)
-		var items = document.getElementById("topnav");
+		var header = document.getElementById("header_wrap");
+		var items = header.getElementsByClassName("topnav");
 		for (var i = 0; i < items.length; i++) {
 		  items[i].addEventListener("click", function() {
 		  var current = document.getElementsByClassName("active");
