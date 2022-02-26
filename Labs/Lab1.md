@@ -1,4 +1,4 @@
-# Lab1: Artemis
+# Lab 1: Artemis
 
 ## Objective
 In this lab, we are required to get familiar with Arduino IDE and the Artemis board. We learn the basic schematics of the Artemis board and set up its function background on Arduino IDE. Then, we are able to complete tasks like blinking an LED, reading/writing serial messages over USB, displaying the outcome of the onboard temperature sensor, and documenting the loudest frequency captured by the Pulse Density Microphone.
