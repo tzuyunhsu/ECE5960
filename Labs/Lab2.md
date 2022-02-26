@@ -1,4 +1,4 @@
-# Lab2: Bluetooth
+# Lab 2: Bluetooth
 
 ## Objective
 In the last lab, we learned to communicate with the Artemis board via the serial port. This time, we are asked to establish the bluetooth communication between the personal computer and the Artemis board. The lab is divided into two parts: computer and Artemis board setup and required tasks. I will walk through the setup briefly to explain the environment that we are working on, and go into details about the tasks, including sending and receiving data, differneces between distinct approaches, and the performance evaluation.
