@@ -1,29 +1,3 @@
- <html>
- <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
-          <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
-        </header>
-    <!-- nav bar-->
-		<div class="topnav">
-			<a href="/ECE5960">About</a>
-			<a class="active" href="/ECE5960/Labs/Lab1">Lab 1</a>
-			<a href="/ECE5960/Labs/Lab2">Lab 2</a>
-			<a href="/ECE5960/Labs/Lab3">Lab 3</a>
-		  	<a href="/ECE5960/Labs/Lab4">Lab 4</a>
-			<a href="../ECE5960/Labs/Lab5">Lab 5</a>
-			<a href="../ECE5960/Labs/Lab6">Lab 6</a>
-		  	<a href="../ECE5960/Labs/Lab7">Lab 7</a>
-			<a href="../ECE5960/Labs/Lab8">Lab 8</a>
-			<a href="../ECE5960/Labs/Lab9">Lab 9</a>
-		  	<a href="../ECE5960/Labs/Lab10">Lab 10</a>
-			<a href="../ECE5960/Labs/Lab11">Lab 11</a>
-			<a href="../ECE5960/Labs/Lab12">Lab 12</a>
-		</div>
-    </div>
-</html>
-
 # Lab 1: Artemis
 
 ## Objective
