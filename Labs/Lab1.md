@@ -1,3 +1,4 @@
+ <html>
  <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
@@ -21,6 +22,7 @@
 			<a href="../ECE5960/Labs/Lab12">Lab 12</a>
 		</div>
     </div>
+</html>
 
 # Lab 1: Artemis
 
