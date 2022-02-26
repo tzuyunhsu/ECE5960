@@ -28,11 +28,22 @@
 		  color: black;
 		}
 
-		.topnav a.active {
+		.topnav >.active>a {
 		  background-color: #696a2c;
 		  color: white;
 		}
 	  </style>
+	<script>
+        $(document).ready(function () {
+  
+            $('div.topnav > a')
+                    .click(function (e) {
+                $('div.topnav > a')
+                    .removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    	</script>
 {% seo %}
     {% include head-custom.html %}
   </head>
@@ -47,7 +58,7 @@
         </header>
     <!-- nav bar-->
 		<div class="topnav">
-			<a class="active" href="/ECE5960">About</a>
+			<a class = "active" href="/ECE5960">About</a>
 			<a href="/ECE5960/Labs/Lab1">Lab 1</a>
 			<a href="/ECE5960/Labs/Lab2">Lab 2</a>
 			<a href="/ECE5960/Labs/Lab3">Lab 3</a>
