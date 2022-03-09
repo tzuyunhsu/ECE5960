@@ -4,7 +4,9 @@
 In this lab, we want to change from manual to open loop control of the car, which means the car motion will be pre-programmed to perform the required tasks. We learn how to program motor drivers to control the car movement and understand the effectiveness of the PWM singals.
 
 ## Prelab
-We intend to parallel couple the two inputs and outputs on each motor driver, which means we use two channels to drive one single motor. This enables us to drive twice the average average current without overheating the chip. As for the circuit design, I soldered A, B channels with the same input and output numbers together. Since we need to drive pwm signal from the Artemis board to the motor drvier, I chose GPIO pin 9, 11, 12, 13 to connect to the inputs of two motor drivers respectively. It's also better to power the Artemis board and the motor drivers/motors from separate batteries since the range of the voltage required to power up the motors is higher than the voltage for Artemis board. If they use the same battery, the Artemis board may fail.
+We intend to parallel couple the two inputs and outputs on each motor driver, which means we use two channels to drive one single motor. This enables us to drive twice the average average current without overheating the chip. As for the circuit design, I soldered A, B channels with the same input and output numbers together. Since we need to drive pwm signal from the Artemis board to the motor drvier, I chose GPIO pin 9, 11, 12, 13 to connect to the inputs of two motor drivers respectively. It's also better to power the Artemis board and the motor drivers/motors from separate batteries since the range of the voltage required to power up the motors is higher than the voltage for Artemis board. If they use the same battery, the Artemis board may fail.  
+
+  <img src="/ECE5960/assets/motor driver.png" width="600">
 
 ## Lab Procedure
 1. First, I connect the power and signal input to a motor driver and use analogWrite to generate PWM signals from the Artemis board. For now, dc power supply is used to power up the motor driver for debugging feasibility. I use GPIO pin 9 and 11 to generate PWM signal from 0 to 255, and then ramps it down. As shown in the video, the duty cycle goes from 0 to 100% and decreases back to 0% gradually in the oscilloscope.  
@@ -17,7 +19,7 @@ We intend to parallel couple the two inputs and outputs on each motor driver, wh
 
 3. After checking that both motor drivers function as expected, I took the car apart to remove the unwanted parts and planned out the wire paths to hook up all the components. I removed the original PCB board and the wires connected to the LEDs and motors since I'll replace the PCB with the Artemis board. Motor drivers are connected to the Artemis board as shown in the prelab circuit design, and the VIN and GND pins for the power source are powered by a 850 mAh battery. The Artemis board is placed in the slot where the PCB board originally sat in and is powered a 650 mAh battery on its own. Also, I resoldered some parts to adjust the length of the wires to fit onto the car stably. Tapes are used to fasten all connections, including the previous sensors, in place while testing.  
 
-///car pic
+  <img src="/ECE5960/assets/car_motor.png" width="600">
 
 4. When the whole car can be powered by batteries, I wrote a simple move forward code to test the lower limit for which each motor still turns while on the ground. It turned out that the pwm input needs to be at least 42 or 43 to drive the car to move as expected. Sometimes 40 stills works, but the outcome is unstable and may only drive one side of the wheels.  
 
@@ -25,8 +27,9 @@ We intend to parallel couple the two inputs and outputs on each motor driver, wh
 
 /// slow car
 
-6. 
+6. For the final open loop, untethered control of the car, I wrote a program that allows the car to go forward and turn left or right based on the script. For the ````move_and_wait(int pwmLeft, int pwmRight, int duration)```` function, it basically separates the PWM signals for the left or right motors and sets the duration time for each step. As for the ````set_motor_pwm(int pwmLeft, int pwmRight)```` function, it deals with the digitalWrite and analogWrite of the motor to drive or stop a motor. Although I only used the forward instruction so far, I implemented the reverse version of the motion for all possible instructions. All the detailed code is provided below along with the final running and turning car!  
 
+/// final
 
 ## Additional Tasks
 1. According to the Arduino documentation, 
