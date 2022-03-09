@@ -9,7 +9,19 @@ We intend to parallel couple the two inputs and outputs on each motor driver, wh
   <img src="/ECE5960/assets/motor driver.png" width="600">
 
 ## Lab Procedure
-1. First, I connect the power and signal input to a motor driver and use analogWrite to generate PWM signals from the Artemis board. For now, dc power supply is used to power up the motor driver for debugging feasibility. I use GPIO pin 9 and 11 to generate PWM signal from 0 to 255, and then ramps it down. As shown in the video, the duty cycle goes from 0 to 100% and decreases back to 0% gradually in the oscilloscope.  
+1. First, I connect the power and signal input to a motor driver and use analogWrite to generate PWM signals from the Artemis board. For now, dc power supply is used to power up the motor driver for debugging feasibility. I use GPIO pin 9 and 11 to generate PWM signal from 0 to 255, and then ramps it down by 
+    ````
+    for(int i=0; i<=255; i++){
+      analogWrite(ain1, i);
+      delay(10); 
+    }
+    
+    for(int i=255; i>=0; i--){
+      analogWrite(ain1, i);
+      delay(10);
+    }
+    ````
+As shown in the video, the duty cycle goes from 0 to 100% and decreases back to 0% gradually in the oscilloscope.  
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/414cx10zkjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
