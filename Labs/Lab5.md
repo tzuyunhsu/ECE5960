@@ -28,7 +28,9 @@ We intend to parallel couple the two inputs and outputs on each motor driver, wh
     <iframe width="560" height="315" src="https://www.youtube.com/embed/2xHYt6A-PFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 6. For the final open loop, untethered control of the car, I wrote a program that allows the car to go forward and turn left or right based on the script. For the ````move_and_wait(int pwmLeft, int pwmRight, int duration)```` function, it basically separates the PWM signals for the left or right motors and sets the duration time for each step. As for the ````set_motor_pwm(int pwmLeft, int pwmRight)```` function, it deals with the digitalWrite and analogWrite of the motor to drive or stop a motor. Although I only used the forward instruction so far, I implemented the reverse version of the motion for all possible instructions. All the detailed code is provided below along with the final running and turning car!  
-
+    <img src="/ECE5960/assets/set_motor_pwm.png" width="600">
+    <img src="/ECE5960/assets/move_and_wait.png" width="600">
+    <img src="/ECE5960/assets/loop.png" width="600">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/0L3tvuODvR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Additional Tasks
