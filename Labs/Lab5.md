@@ -49,4 +49,5 @@ As shown in the video, the duty cycle goes from 0 to 100% and decreases back to 
 1. According to the Arduino documentation, the frequency that analogWrite function generates differs between different boards and pins. I didn't find the exact PWM frequency for Artemis board from the datasheet, so I refer to Arduino Uno as an example. For Arduino Uno, the PWM frequency for most pins is 490 Hz, while pin 5 and 6 have a higher frequency at 980 Hz. I think it is fast enough for the current usage of the motors. However, the benefits for a faster PWM signal is to have high motor efficiency, fast control response, low motor torque ripple and so on.
 
 ## Reference
-1. K. Shirabe et al., "Advantages of high frequency PWM in AC motor drive applications," 2012 IEEE Energy Conversion Congress and Exposition (ECCE), 2012, pp. 2977-2984, doi: 10.1109/ECCE.2012.6342519.
+1. analogWrite() - Arduino Reference: https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/
+2. K. Shirabe et al., "Advantages of high frequency PWM in AC motor drive applications," 2012 IEEE Energy Conversion Congress and Exposition (ECCE), 2012, pp. 2977-2984, doi: 10.1109/ECCE.2012.6342519.
