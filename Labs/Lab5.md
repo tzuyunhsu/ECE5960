@@ -47,6 +47,7 @@ As shown in the video, the duty cycle goes from 0 to 100% and decreases back to 
 
 ## Additional Tasks
 1. According to the Arduino documentation, the frequency that analogWrite function generates differs between different boards and pins. I didn't find the exact PWM frequency for Artemis board from the datasheet, so I refer to Arduino Uno as an example. For Arduino Uno, the PWM frequency for most pins is 490 Hz, while pin 5 and 6 have a higher frequency at 980 Hz. I think it is fast enough for the current usage of the motors. However, the benefits for a faster PWM signal is to have high motor efficiency, fast control response, low motor torque ripple and so on.  
+
 2. To document the speed range of the car, I use the ToF sensor from the previous lab and combine the bluetooth implementation in lab 2 with my motor code. In this way, I can get the speed data from my computer via the bluetooth notification handler. I updated the code in loop(void) as below, where the write data function is the same as in lab 4 and ````speedValueUp```` and ````speedValueDown```` represent the speed variables for ramping up and down respectively. ````set_motor_pwm(speedValue, speedValue)```` is the same function shown in the previous section. The car can go up to 245 in pwm signal and stops before running into the wall.  
     <img src="/ECE5960/assets/loop code.png" width="550">
 
