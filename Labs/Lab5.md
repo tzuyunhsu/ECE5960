@@ -54,6 +54,7 @@ As for the data collection via the bluetooth connection from my computer, I used
     <img src="/ECE5960/assets/notification.png" width="550">
 I placed the car 3.5 m away from the wall since the data range of the ToF sensor is within 4 m. From the test, the highest speed I achieve is 2171.43 mm/s. However, the notification handler seems to have a time delay to print out the initial speed ramping values, so I didn't capture the speed increase trend for the sensor. As shown in the following picture, the speed range spans from 0 to around 2200 mm/s. It also demonstrates a linear relation between the speed and time in the measured time period. A video is also recorded to show how I implemented the test!
     <img src="/ECE5960/assets/ramping speed.png" width="550">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/U8W0AF1CKr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
 ## Reference
 1. analogWrite() - Arduino Reference: https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/
